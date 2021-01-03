@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+var QRCode = require("qrcode.react");
+
+const qrContent = `
+BEGIN:VCARD
+N:BERNARD;Simon;
+VERSION:3.0
+END:VCARD
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <QRCode value={qrContent} size={1024} renderAs="svg" />
     </div>
   );
 }
